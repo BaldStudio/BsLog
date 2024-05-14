@@ -4,19 +4,19 @@ platform :ios, '13.0'
 
 use_frameworks!
 
-target 'BsLogging' do
+target 'BsLog' do
 
 
 end
 
-target 'BsLoggingDemo' do
+target 'BsLogDemo' do
 
-  pod 'BsLogging', :path => '.'
+  pod 'BsLog', :path => '.'
 
 end
 
-target 'BsLoggingTests' do
+target 'BsLogTests' do
 
-  pod 'BsLogging', :path => '.'
+  pod 'BsLog', :path => '.'
 
 end

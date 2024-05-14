@@ -1,6 +1,6 @@
 //
 //  Locks.swift
-//  BsLogging
+//  BsLog
 //
 //  Created by Runze Chang on 2024/5/7.
 //  Copyright © 2024 BaldStudio. All rights reserved.

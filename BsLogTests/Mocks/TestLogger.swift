@@ -1,6 +1,6 @@
 //
 //  TestLogger.swift
-//  BsLoggingTests
+//  BsLogTests
 //
 //  Created by Runze Chang on 2024/5/8.
 //  Copyright © 2024 BaldStudio. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Foundation
 import XCTest
-@testable import BsLogging
+@testable import BsLog
 
 internal struct TestLogging {
     private let _config = Config() // shared among loggers

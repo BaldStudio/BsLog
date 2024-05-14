@@ -1,13 +1,13 @@
 //
 //  ViewController.swift
-//  BsLoggingDemo
+//  BsLogDemo
 //
 //  Created by crzorz on 2024/05/07.
 //  Copyright © 2024 BaldStudio. All rights reserved.
 //
 
 import UIKit
-import BsLogging
+import BsLog
 
 class ViewController: UIViewController {
     

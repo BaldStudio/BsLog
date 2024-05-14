@@ -1,13 +1,13 @@
 //
 //  LoggingTest.swift
-//  BsLoggingTests
+//  BsLogTests
 //
 //  Created by crzorz on 2024/05/07.
 //  Copyright © 2024 BaldStudio. All rights reserved.
 //
 
 import XCTest
-@testable import BsLogging
+@testable import BsLog
 
 class LoggingTest: XCTestCase {
     func testAutoclosure() {
@@ -231,7 +231,7 @@ class LoggingTest: XCTestCase {
         emitLogMessage("hello", to: logger)
 
         #if compiler(>=5.3)
-        let moduleName = "BsLoggingTests" // the actual name
+        let moduleName = "BsLogTests" // the actual name
         #else
         let moduleName = "SubDirectoryOfLoggingTests" // the last path component of `#file` showing the failure mode
         #endif

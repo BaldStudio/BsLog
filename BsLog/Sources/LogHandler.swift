@@ -1,6 +1,6 @@
 //
 //  LogHandler.swift
-//  BsLogging
+//  BsLog
 //
 //  Created by Runze Chang on 2024/5/7.
 //  Copyright © 2024 BaldStudio. All rights reserved.
@@ -39,7 +39,7 @@ extension LogHandler {
                 log(level: .warn,
                     message: "Attempted to set metadataProvider on \(Self.self) that did not implement support for them. Please contact the log handler maintainer to implement metadata provider support.",
                     metadata: nil,
-                    source: "BsLogging",
+                    source: "BsLog",
                     file: #file,
                     function: #function,
                     line: #line)

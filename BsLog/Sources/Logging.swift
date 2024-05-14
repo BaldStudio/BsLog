@@ -1,6 +1,6 @@
 //
 //  Logging.swift
-//  BsLogging
+//  BsLog
 //
 //  Created by crzorz on 2024/05/07.
 //  Copyright © 2024 BaldStudio. All rights reserved.
