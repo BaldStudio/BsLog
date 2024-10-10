@@ -12,12 +12,9 @@ public enum LoggingSystem {
     static let logHandlerFactory = LogHandlerFactory { label, _ in
         StreamLogHandler.standardOutput(label: label)
     }
-    static let metadataProviderFactory = MetadataProviderFactory(nil)
     
-#if DEBUG
-    private static var warnOnceBox: WarnOnceBox = WarnOnceBox()
-#endif
-    
+    static let metadataProviderFactory = MetadataProviderFactory()
+        
     public static var metadataProvider: Logger.MetadataProvider? {
         metadataProviderFactory.make()
     }
@@ -33,9 +30,9 @@ public enum LoggingSystem {
         }
     }
     
-    public static func bootstrap(metadataProvider: Logger.MetadataProvider?,
+    public static func bootstrap(metadataProvider: @autoclosure @escaping () -> Logger.MetadataProvider?,
                                  _ factory: @escaping (String, Logger.MetadataProvider?) -> LogHandler) {
-        bootstrap(validate: true, metadataProvider: metadataProvider, factory)
+        bootstrap(validate: true, metadataProvider: metadataProvider(), factory)
     }
     
     // easy to test
@@ -51,12 +48,6 @@ extension LoggingSystem {
     static func createLogHandler(_ label: String, _ provider: Logger.MetadataProvider?) -> LogHandler {
         logHandlerFactory.make(label, metadataProvider)
     }
-    
-#if DEBUG
-    static func warnOnceLogHandlerNotSupportedMetadataProvider<Handler: LogHandler>(_ type: Handler.Type) -> Bool {
-        warnOnceBox.warnOnceLogHandlerNotSupportedMetadataProvider(type: type)
-    }
-#endif
 }
 
 // MARK: -  Factory
@@ -86,12 +77,14 @@ extension LoggingSystem {
             }
         }
     }
-    
+        
     final class MetadataProviderFactory {
         private let lock = ReadWriteLock()
         
         private var underlying: Logger.MetadataProvider?
         private var initialized = false
+        
+        fileprivate init() {}
         
         init(_ underlying: Logger.MetadataProvider?) {
             self.underlying = underlying
@@ -113,6 +106,12 @@ extension LoggingSystem {
     }
     
 #if DEBUG
+    private static let warnOnceBox = WarnOnceBox()
+    
+    static func warnOnceLogHandlerNotSupportedMetadataProvider<Handler: LogHandler>(_ type: Handler.Type) -> Bool {
+        warnOnceBox.warnOnceLogHandlerNotSupportedMetadataProvider(type: type)
+    }
+    
     final class WarnOnceBox {
         private let lock: Lock = Lock()
         private var warnOnceLogHandlerNotSupportedMetadataProviderPerType: [ObjectIdentifier: Bool] = [:]

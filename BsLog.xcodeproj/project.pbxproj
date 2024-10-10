@@ -30,6 +30,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6F2AACCD2CB7727800C886BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D27A8A1425203F1A006A6125 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D23FF0C525AD9B5200D755D9;
+			remoteInfo = BsLogDemo;
+		};
 		D23FF0E625AD9C5600D755D9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D27A8A1425203F1A006A6125 /* Project object */;
@@ -51,7 +58,7 @@
 		46110B4287160B24FB08264F /* Pods_BsLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BsLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47D6B0167CCEB5E281372FFE /* Pods_BsLogTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BsLogTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F78990F2CA936DA0091D844 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
-		6F7899102CA936DA0091D844 /* BsLog.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = BsLog.podspec; sourceTree = SOURCE_ROOT; };
+		6F7899102CA936DA0091D844 /* BsLog.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = BsLog.podspec; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6F7899112CA936DA0091D844 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		6F88AA3F2BEA192900B760E9 /* LogHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogHandler.swift; sourceTree = "<group>"; };
 		6F88AA412BEA1C5300B760E9 /* LoggingSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingSystem.swift; sourceTree = "<group>"; };
@@ -295,6 +302,7 @@
 			);
 			dependencies = (
 				D23FF0E725AD9C5600D755D9 /* PBXTargetDependency */,
+				6F2AACCE2CB7727800C886BF /* PBXTargetDependency */,
 			);
 			name = BsLogTests;
 			productName = BsLoggingTests;
@@ -336,6 +344,7 @@
 					};
 					D23FF0DF25AD9C5600D755D9 = {
 						CreatedOnToolsVersion = 12.3;
+						TestTargetID = D23FF0C525AD9B5200D755D9;
 					};
 					D27A8A1C25203F1A006A6125 = {
 						CreatedOnToolsVersion = 11.7;
@@ -497,6 +506,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6F2AACCE2CB7727800C886BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D23FF0C525AD9B5200D755D9 /* BsLogDemo */;
+			targetProxy = 6F2AACCD2CB7727800C886BF /* PBXContainerItemProxy */;
+		};
 		D23FF0E725AD9C5600D755D9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			platformFilter = ios;
@@ -542,6 +556,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = "$(inherited)";
 				CODE_SIGN_ENTITLEMENTS = "$(TARGET_NAME)/SupportingFiles/${TARGET_NAME).entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = Y64ARVLCP4;
 				INFOPLIST_FILE = "$(TARGET_NAME)/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -570,6 +585,8 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = "$(inherited)";
 				CODE_SIGN_ENTITLEMENTS = "$(TARGET_NAME)/SupportingFiles/${TARGET_NAME).entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
 				DEVELOPMENT_TEAM = Y64ARVLCP4;
 				INFOPLIST_FILE = "$(TARGET_NAME)/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -608,6 +625,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BsLogDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BsLogDemo";
 				VERSIONING_SYSTEM = "apple-generic-hidden";
 			};
 			name = Debug;
@@ -633,6 +651,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BsLogDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BsLogDemo";
 				VERSIONING_SYSTEM = "apple-generic-hidden";
 			};
 			name = Release;

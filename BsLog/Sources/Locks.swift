@@ -9,7 +9,7 @@
 import Darwin
 
 final class Lock {
-    private let mutex: UnsafeMutablePointer<pthread_mutex_t> = UnsafeMutablePointer.allocate(capacity: 1)
+    private let mutex = UnsafeMutablePointer<pthread_mutex_t>.allocate(capacity: 1)
     
     init() {
         var attr = pthread_mutexattr_t()
@@ -48,7 +48,7 @@ extension Lock {
 // MARK: - Read Write Lock
 
 final class ReadWriteLock {
-    private let rwlock: UnsafeMutablePointer<pthread_rwlock_t> = UnsafeMutablePointer.allocate(capacity: 1)
+    private let rwlock = UnsafeMutablePointer<pthread_rwlock_t>.allocate(capacity: 1)
     
     init() {
         let err = pthread_rwlock_init(rwlock, nil)

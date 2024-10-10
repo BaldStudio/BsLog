@@ -44,6 +44,7 @@ public struct StreamLogHandler: LogHandler {
     }
     
     private let stream: _SendableTextOutputStream
+    
     private let label: String
     
     public var logLevel: Logger.Level = .verbose
@@ -51,6 +52,7 @@ public struct StreamLogHandler: LogHandler {
     public var metadataProvider: Logger.MetadataProvider?
     
     private var prettyMetadata: String?
+    
     public var metadata = Logger.Metadata() {
         didSet {
             prettyMetadata = prettify(metadata)
@@ -104,6 +106,7 @@ public struct StreamLogHandler: LogHandler {
         var metadata = base
         
         let providedMetadata = provider?.metadata ?? [:]
+        
         let explicitMetadata = explicit ?? [:]
         
         guard !providedMetadata.isEmpty || !explicitMetadata.isEmpty else {

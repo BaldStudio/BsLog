@@ -6,6 +6,22 @@
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES"
       buildArchitectures = "Automatic">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D23FF0C525AD9B5200D755D9"
+               BuildableName = "BsLogDemo.app"
+               BlueprintName = "BsLogDemo"
+               ReferencedContainer = "container:BsLog.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -13,18 +29,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       shouldAutocreateTestPlan = "YES">
-      <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D23FF0DF25AD9C5600D755D9"
-               BuildableName = "BsLogTests.xctest"
-               BlueprintName = "BsLogTests"
-               ReferencedContainer = "container:BsLog.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -53,7 +57,8 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D23FF0C525AD9B5200D755D9"
@@ -61,7 +66,7 @@
             BlueprintName = "BsLogDemo"
             ReferencedContainer = "container:BsLog.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
